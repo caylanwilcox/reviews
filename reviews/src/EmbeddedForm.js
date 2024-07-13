@@ -11,17 +11,20 @@ const EmbeddedForm = () => {
           l = d.createElement(e);
           l.async = 1;
           l.src = u;
-          n = d.getElementsByTagName(e)[0];
-          n.parentNode.insertBefore(l, n);
           l.onload = () => {
+            console.log('MailerLite script loaded.');
             window.ml = window.ml || function() {
               (window.ml.q = window.ml.q || []).push(arguments);
             };
             window.ml('account', '1015778');
+            console.log('MailerLite initialized.');
           };
+          n = d.getElementsByTagName(e)[0];
+          n.parentNode.insertBefore(l, n);
         })(window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
       } else {
         window.ml('account', '1015778');
+        console.log('MailerLite already initialized.');
       }
     };
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import ReviewButtons from './ReviewButtons';
 import EmbeddedForm from './EmbeddedForm';
@@ -8,12 +8,18 @@ const App = () => {
   const [showForm, setShowForm] = useState(false);
 
   const handleEmailClick = () => {
+    console.log('Email button clicked');
     setShowForm(true);
   };
 
   const handleBackClick = () => {
+    console.log('Back button clicked');
     window.location.reload();
   };
+
+  useEffect(() => {
+    console.log('App component mounted.');
+  }, []);
 
   return (
     <div className="App">
