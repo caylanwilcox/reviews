@@ -18,6 +18,15 @@ const EmbeddedForm = () => {
             };
             window.ml('account', '1015778');
             console.log('MailerLite initialized.');
+            // Verify the form is initialized
+            if (document.querySelector('.ml-embedded')) {
+              console.log('MailerLite form found and initialized.');
+            } else {
+              console.error('MailerLite form not found.');
+            }
+          };
+          l.onerror = () => {
+            console.error('Error loading MailerLite script.');
           };
           n = d.getElementsByTagName(e)[0];
           n.parentNode.insertBefore(l, n);
