@@ -5,7 +5,7 @@ import EmbeddedForm from './EmbeddedForm';
 import logo from './Images/logo.png';  // Ensure the logo path is correct
 
 const App = () => {
-  const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(true);
 
   const handleEmailClick = () => {
     console.log('Email button clicked');
